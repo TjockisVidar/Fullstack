@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 12vh 10vh;
+    grid-template-columns: 1fr;
+    background-color: white;
+}
+
+@keyframes changePageAnim {
+    to {
+        background-color: $main;
+        position: absolute;
+        border-radius: 0;
+        scale: 70;
+    }
+}
+
+.changePage {
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+    background-color: $main;
+    border-radius: 100vw;
+    z-index: 5;
+}
+
+@keyframes menuShow {
+    from {
+        height: 15vh;
+        box-shadow: none;
+    }
+    to {
+        height: 39vh;
+        box-shadow: 0.5vw -1.2vh 1vw black;
+    }
+}
+
+@keyframes hideMenu {
+    from {
+        height: 39vh;
+        box-shadow: 0.5vw -1.2vh 1vw black;
+    }
+    to {
+        height: 15vh;
+        box-shadow: none;
+    }
+}
+
+.topContainer {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 60%;
+    text-align: center;
+    .logoContainer {
+        grid-row: 1;
+        width: 25vw;
+        height: 100%;
+        margin-left: 1vw;
+        text-align: start;
+        h1 {
+            font-family: "Amarante";
+            color: $main;
+            font-size: 250%;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 400;
+        }
+    }
+
+    .creatorName {
+        font-family: "Oswald";
+        font-size: 200%;
+        color: $main;
+    }
+
+    .menuContainer {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        grid-row: 1;
+        width: 12vw;
+        position: absolute;
+        right: 0vw;
+        height: 15vh;
+        background-color: white;
+        border-bottom-left-radius: 1vw;
+        z-index: 2;
+        h1 {
+            position: relative;
+            left: 1.2vw;
+            font-family: "Oswald";
+            color: $main;
+            font-size: 250%;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 400;
+            
+        }
+        .albumsContainer {
+            display: grid;
+            justify-content: end;
+            p {
+                margin-top: -1vh;
+                margin-right: 1vw;
+                font-size: 150%;
+                font-family: "Oswald";
+                color: $main;
+                transition: 0.5s;
+                user-select: none;
+                cursor: pointer;
+            }
+            p:hover {
+                transform: translateX(-25%);
+            }
+        }
+    }
+}
+
+.headingContainer {
+    h1 {
+        font-family: "Oswald";
+        color: $main;
+        text-align: center;
+        font-weight: 300;
+    }
+}
+
+.textContainer {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    left: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    border: 0.1vw solid black;
+    border-radius: 0.5vw;
+}

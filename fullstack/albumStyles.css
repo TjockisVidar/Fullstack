@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 12vh 10vh;
+  grid-template-columns: 1fr;
+  background-color: white;
+}
+
+@keyframes changePageAnim {
+  to {
+    background-color: rgb(50, 130, 250);
+    position: absolute;
+    border-radius: 0;
+    scale: 70;
+  }
+}
+.changePage {
+  width: 5vw;
+  height: 5vw;
+  position: absolute;
+  background-color: rgb(50, 130, 250);
+  border-radius: 100vw;
+  z-index: 5;
+}
+
+@keyframes menuShow {
+  from {
+    height: 15vh;
+    box-shadow: none;
+  }
+  to {
+    height: 39vh;
+    box-shadow: 0.5vw -1.2vh 1vw black;
+  }
+}
+@keyframes hideMenu {
+  from {
+    height: 39vh;
+    box-shadow: 0.5vw -1.2vh 1vw black;
+  }
+  to {
+    height: 15vh;
+    box-shadow: none;
+  }
+}
+.topContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 60%;
+  text-align: center;
+}
+.topContainer .logoContainer {
+  grid-row: 1;
+  width: 25vw;
+  height: 100%;
+  margin-left: 1vw;
+  text-align: start;
+}
+.topContainer .logoContainer h1 {
+  font-family: "Amarante";
+  color: rgb(50, 130, 250);
+  font-size: 250%;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-weight: 400;
+}
+.topContainer .creatorName {
+  font-family: "Oswald";
+  font-size: 200%;
+  color: rgb(50, 130, 250);
+}
+.topContainer .menuContainer {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  grid-row: 1;
+  width: 12vw;
+  position: absolute;
+  right: 0vw;
+  height: 15vh;
+  background-color: white;
+  border-bottom-left-radius: 1vw;
+  z-index: 2;
+}
+.topContainer .menuContainer h1 {
+  position: relative;
+  left: 1.2vw;
+  font-family: "Oswald";
+  color: rgb(50, 130, 250);
+  font-size: 250%;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-weight: 400;
+}
+.topContainer .menuContainer .albumsContainer {
+  display: grid;
+  justify-content: end;
+}
+.topContainer .menuContainer .albumsContainer p {
+  margin-top: -1vh;
+  margin-right: 1vw;
+  font-size: 150%;
+  font-family: "Oswald";
+  color: rgb(50, 130, 250);
+  transition: 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.topContainer .menuContainer .albumsContainer p:hover {
+  transform: translateX(-25%);
+}
+
+.headingContainer h1 {
+  font-family: "Oswald";
+  color: rgb(50, 130, 250);
+  text-align: center;
+  font-weight: 300;
+}
+
+.textContainer {
+  width: 40%;
+  height: 100%;
+  position: relative;
+  left: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  border: 0.1vw solid black;
+  border-radius: 0.5vw;
+}/*# sourceMappingURL=albumStyles.css.map */

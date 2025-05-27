@@ -1,0 +1,534 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 70%;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+@keyframes changePageAnim {
+  to {
+    background-color: rgb(50, 130, 250);
+    position: absolute;
+    border-radius: 0;
+    scale: 70;
+  }
+}
+.changePage {
+  width: 5vw;
+  height: 5vw;
+  position: absolute;
+  background-color: rgb(50, 130, 250);
+  border-radius: 100vw;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logCreateContainer {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  display: grid;
+  grid-template-rows: 40% 15%;
+}
+.logCreateContainer .profile {
+  grid-row: 1;
+  background-color: rgb(50, 130, 250);
+  width: 4vw;
+  height: 4vw;
+  border-radius: 2vw;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+.logCreateContainer .profile svg {
+  width: 80%;
+  height: auto;
+}
+.logCreateContainer .profile p {
+  display: none;
+  position: absolute;
+  font-size: 500%;
+  transform: rotate(45deg);
+  color: white;
+}
+.logCreateContainer .createButton {
+  grid-row: 3;
+  background-color: rgb(50, 130, 250);
+  width: 4vw;
+  height: 4vw;
+  border-radius: 2vw;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+.logCreateContainer .createButton p {
+  position: absolute;
+  font-size: 500%;
+  color: white;
+}
+
+.buttonOn {
+  box-shadow: 0.3vw 0.4vw 0.4vw rgba(0, 0, 0, 0.3) inset, -0.2vw -0.4vw 1vw rgba(255, 255, 255, 0.4) inset;
+}
+
+@keyframes openLogsignin {
+  from {
+    width: 1vw;
+    height: 1vh;
+    position: absolute;
+    right: 3vw;
+    top: 5vh;
+  }
+  to {
+    width: 40vw;
+    height: 60vh;
+    position: absolute;
+    right: 30vw;
+    top: 20vh;
+  }
+}
+@keyframes slideLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideRight {
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes rightNoSlide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes leftNoSlide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes rightNoSlideBack {
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes leftNoSlideBack {
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes closeStay {
+  to {
+    transform: translateX(733%) rotate(45deg);
+  }
+}
+@keyframes closeStayBack {
+  to {
+    transform: translateX(0%) rotate(45deg);
+  }
+}
+.logsigninContainer {
+  width: 40vw;
+  height: 60vh;
+  position: absolute;
+  right: 30vw;
+  top: 20vh;
+  border-radius: 4%;
+  border: 0.1vw solid rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  overflow: hidden;
+  z-index: 1;
+}
+.logsigninContainer .close1 {
+  z-index: 999;
+  cursor: pointer;
+  text-shadow: 0 0 0.1vw black;
+  position: absolute;
+  right: 0vw;
+  bottom: 75%;
+  font-family: arial;
+  transform: rotate(45deg);
+}
+.logsigninContainer .login {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  font-family: "oswald";
+}
+.logsigninContainer .login .usernameContainer, .logsigninContainer .login .passwordContainer {
+  position: relative;
+  top: 15vh;
+  left: 5vw;
+}
+.logsigninContainer .login .usernameContainer p, .logsigninContainer .login .passwordContainer p {
+  position: relative;
+  top: 2vh;
+}
+.logsigninContainer .login .usernameContainer input, .logsigninContainer .login .passwordContainer input {
+  height: 4vh;
+  border-radius: 1vw;
+  font-family: "oswald";
+  width: 50%;
+}
+.logsigninContainer .login button {
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  height: 20%;
+  width: 50%;
+  background-color: transparent;
+  border-radius: 1vw;
+  transition: 0.5s;
+  cursor: pointer;
+  font-family: "oswald";
+  letter-spacing: 0.05vw;
+}
+.logsigninContainer .login button:hover {
+  letter-spacing: 0.1vw;
+  background-color: rgb(50, 130, 250);
+  color: white;
+}
+.logsigninContainer .signup {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  font-family: "oswald";
+}
+.logsigninContainer .signup .close2 {
+  text-shadow: 0 0 0.1vw black;
+  position: absolute;
+  left: -2vw;
+  top: 0;
+  font-family: arial;
+  color: rgb(50, 130, 250);
+  transform: rotate(45deg);
+  cursor: pointer;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
+}
+.logsigninContainer .signup .usernameContainer, .logsigninContainer .signup .passwordContainer, .logsigninContainer .signup .mailContainer {
+  position: relative;
+  top: 2vh;
+  left: 5vw;
+}
+.logsigninContainer .signup .usernameContainer p, .logsigninContainer .signup .passwordContainer p, .logsigninContainer .signup .mailContainer p {
+  position: relative;
+  top: 2vh;
+}
+.logsigninContainer .signup .usernameContainer input, .logsigninContainer .signup .passwordContainer input, .logsigninContainer .signup .mailContainer input {
+  height: 4vh;
+  border-radius: 1vw;
+  font-family: "oswald";
+  width: 50%;
+}
+.logsigninContainer .signup button {
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  height: 20%;
+  width: 50%;
+  background-color: transparent;
+  border-radius: 1vw;
+  transition: 0.5s;
+  cursor: pointer;
+  font-family: "oswald";
+  letter-spacing: 0.05vw;
+}
+.logsigninContainer .signup button:hover {
+  letter-spacing: 0.1vw;
+  background-color: rgb(50, 130, 250);
+  color: white;
+}
+.logsigninContainer .cover {
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 20vw;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(50, 130, 250);
+  border-radius: 1vw;
+  overflow: hidden;
+}
+.logsigninContainer .cover .right {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+.logsigninContainer .cover .right h2 {
+  font-family: "oswald";
+  font-size: 200%;
+  color: white;
+  position: absolute;
+  top: -1vh;
+  right: 3vw;
+}
+.logsigninContainer .cover .right button {
+  z-index: 2;
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 60%;
+  height: 20%;
+  background-color: transparent;
+  border-radius: 1vw;
+  font-family: "oswald";
+  font-weight: 400;
+  letter-spacing: 0.05vw;
+  border: 0.07vw solid black;
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+}
+.logsigninContainer .cover .right button:hover {
+  letter-spacing: 0.1vw;
+  background-color: rgb(50, 130, 250);
+  color: black;
+}
+.logsigninContainer .cover .left {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100%;
+}
+.logsigninContainer .cover .left h2 {
+  font-family: "oswald";
+  font-size: 200%;
+  color: white;
+  position: absolute;
+  top: -1vh;
+  right: 7vw;
+}
+.logsigninContainer .cover .left button {
+  z-index: 2;
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  width: 60%;
+  height: 20%;
+  background-color: transparent;
+  border-radius: 1vw;
+  font-family: "oswald";
+  font-weight: 400;
+  letter-spacing: 0.05vw;
+  border: 0.07vw solid black;
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+}
+.logsigninContainer .cover .left button:hover {
+  letter-spacing: 0.1vw;
+  background-color: rgb(50, 130, 250);
+  color: black;
+}
+
+h1 {
+  font-family: "Amarante";
+  color: rgb(50, 130, 250);
+  font-size: 450%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "Oswald";
+  color: rgb(50, 130, 250);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 200%;
+}
+
+.textHeading {
+  align-self: end;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  margin-left: 1vw;
+}
+
+.textsContainer {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  top: 0;
+  margin-top: 0;
+  margin-left: 1vw;
+  overflow-y: scroll;
+  width: 95%;
+}
+.textsContainer .indTextContainer {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: left;
+}
+.textsContainer h2 {
+  font-family: "Oswald";
+  color: rgb(50, 130, 250);
+  font-size: 200%;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-weight: 400;
+  letter-spacing: 0.5vw;
+  transition: 0.5s;
+}
+
+.indTextContainer:hover h2 {
+  transform: translateX(25%);
+}
+
+.textsContainer::-webkit-scrollbar {
+  background-color: transparent;
+  margin-left: 10%;
+  width: 0.5vw;
+}
+
+.textsContainer::-webkit-scrollbar-thumb {
+  background-color: rgb(50, 130, 250);
+  border-radius: 0.5vw;
+}
+
+.logoContainer {
+  width: 40vw;
+  grid-column: 2;
+  grid-row: 2;
+}
+.logoContainer h1 {
+  margin: 0;
+}
+
+@keyframes changeNameAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes nextImgAnim {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(-50vw);
+  }
+}
+@keyframes prevImgAnim {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(50vw);
+  }
+}
+.uploadPage {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.01);
+  border: 0.2vw solid rgb(50, 130, 250);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  width: 50vw;
+  height: 75vh;
+  position: absolute;
+  z-index: 1;
+  left: 25vw;
+  top: 12.5vh;
+  border-radius: 0.5vw;
+}
+.uploadPage .textContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  font-family: "Oswald";
+  display: grid;
+  grid-template-rows: 20% 20%;
+}
+.uploadPage .textContainer input {
+  font-family: "Oswald";
+  outline: none;
+}
+.uploadPage .textContainer .textUsername {
+  height: 35%;
+  width: 35%;
+  font-size: 200%;
+  margin-top: 1%;
+  margin-left: 1%;
+  text-align: center;
+  grid-row: 1;
+}
+.uploadPage .textContainer .textHeading {
+  width: 35%;
+  height: 35%;
+  grid-column: 1;
+  margin-left: 32.5%;
+  align-self: center;
+  border: none;
+  border-bottom: 0.1vh solid black;
+  background-color: transparent;
+  font-size: 200%;
+  text-align: center;
+  grid-row: 2;
+}
+.uploadPage .textContainer textArea {
+  width: 95%;
+  margin-left: 2.5%;
+  font-family: "Arial";
+  resize: none;
+  padding: 1%;
+  outline: none;
+  font-size: 110%;
+  border-bottom: none;
+}
+.uploadPage .textContainer button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  height: 10%;
+  width: 20%;
+  border: 0.1vw solid black;
+  background-color: rgba(30, 255, 50, 0.5);
+  border-radius: 0.2vw;
+  letter-spacing: 0.05vw;
+  transition: 0.5s;
+  cursor: pointer;
+  font-size: 200%;
+}
+.uploadPage .textContainer button:hover {
+  letter-spacing: 0.1vw;
+  background-color: rgb(0, 255, 0);
+}
+.uploadPage .letterCount {
+  position: absolute;
+  right: 1.5vw;
+  align-self: end;
+}/*# sourceMappingURL=styles.css.map */
